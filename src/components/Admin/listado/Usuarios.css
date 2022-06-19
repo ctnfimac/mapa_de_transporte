@@ -1,0 +1,55 @@
+.usuarios__container{
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 0px;
+    border-radius: 3px;
+    margin-top: 100px;
+    padding: 10px;
+}
+
+.usuarios__container h2{
+    margin: 5px;
+}
+
+.usuarios__table{
+    /* background-color: tomato; */
+    width: 100%;
+    text-align: center;
+}
+
+.usuarios__table thead{
+    background-color: thistle;
+}
+
+.usuarios__table tbody td{
+    padding: 4px;
+}
+
+.usuarios__table button, .usuarios__container .btn-add{
+    padding: 5px 7px;
+    border-radius: 3px;
+    background-color: tomato;
+    margin-left: 2px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.usuarios__table .btn-danger{
+    background-color: tomato;
+}
+
+.usuarios__table .btn-warning{
+    background-color: rgb(255, 227, 71);
+    color: #444;
+}
+
+.usuarios__container .btn-add{
+    background-color: #27ae60;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    display: block;
+    width: 60px;
+}

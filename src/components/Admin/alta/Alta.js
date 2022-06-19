@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import './Alta.css'
+import {Link} from 'react-router-dom';
+import './Alta.css';
 
 const Alta = () => {
     const [nombre, setNombre ] = useState('')
@@ -74,7 +75,9 @@ const Alta = () => {
                         onChange={onChangeDireccion}
                     />
                 </div>
+                <Link to="/admin" >Volver</Link>
                 <button type="submit" onClick={submitValues}>Agregar</button>
+                
             </form>
         </div>
     )
