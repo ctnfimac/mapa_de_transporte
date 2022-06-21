@@ -1,0 +1,63 @@
+body{
+    background-color: #2c3e50;
+    padding: 4px;
+}
+
+
+.form__container{
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 15px;
+    border-radius: 3px;
+    margin-top: 100px;
+}
+
+.form__respuesta{
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.form__container .correcta{
+    background-color: #1abc9c;
+}
+
+.form__container .incorrecta{
+    background-color: #e74c3c;
+}
+
+.form__title{
+    color: steelblue;
+}
+
+.form__alta{
+
+}
+
+.form__item{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form__item label{
+    color: #444;
+}
+
+.form__item input{
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form__alta button{
+    background-color: #2ecc71;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid #2ecc71;
+    cursor: pointer;
+
+}
