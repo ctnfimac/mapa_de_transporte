@@ -22,7 +22,7 @@ const Alta = () => {
                 'nombre': nombre,
                 'direccion': direccion
             }
-            fetch('http://localhost:3001/usuario', {
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/usuario`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

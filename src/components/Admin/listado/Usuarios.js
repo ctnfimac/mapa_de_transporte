@@ -7,7 +7,7 @@ const Usuarios = () => {
     const [datosActualizados, setDatosActualizados] = useState(false)
 
     useEffect(()=>{
-        fetch('http://localhost:3001/usuarios')
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/usuarios`)
             .then(response => response.json())
             .then(data => setUsuarios(data))
     },[datosActualizados])
@@ -15,8 +15,7 @@ const Usuarios = () => {
     const borrar = (id) =>{
         let confirmacion = window.confirm(`Realmente quiere borrar el registro de id: ${id} ?`)
         if(confirmacion){
-            console.log('borrar')
-            fetch('http://localhost:3001/usuario/'+id, {
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/usuario/${id}`, { 
                 method:'DELETE'
             })
             .then(response => response.text())

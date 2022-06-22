@@ -25,7 +25,7 @@ const Actualizar = () => {
                 'nombre': nombre,
                 'direccion': direccion
             }
-            fetch(`http://localhost:3001/usuario/${data.state.id}`, {
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/usuario/${data.state.id}`, {
                 method: 'PUT',
                 headers: {
                     'Accept': 'application/json',
