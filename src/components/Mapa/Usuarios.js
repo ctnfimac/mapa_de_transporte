@@ -1,6 +1,6 @@
 import { Popup, Circle } from 'react-leaflet';
 import useSwr from "swr";
-import { fetcher, url_api_usuarios, rectangleOptions} from './../../consts/backend'
+import { fetcher, url_api_usuarios, circleOptions} from './../../consts/backend'
 
 
 
@@ -13,14 +13,14 @@ function Usuarios(){
             <Circle
                 key={usuario.id}
                 center={[usuario.latitud, usuario.longitud]}
-                pathOptions={rectangleOptions}
-                radius={50}
+                pathOptions={circleOptions}
+                radius={60}
             >
                 <Popup>
                     <b>{usuario.nombre}</b> <br />
-            direccion: {usuario.direccion}<br />
-            latitud: {usuario.latitud}<br />
-            longitud: {usuario.longitud}
+                    direccion: {usuario.direccion}<br />
+                    latitud: {usuario.latitud}<br />
+                    longitud: {usuario.longitud}
                 </Popup>
             </Circle>
         )

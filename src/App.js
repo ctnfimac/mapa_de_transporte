@@ -14,17 +14,11 @@ function App() {
         <Route 
             path="admin/actualizar"  
             element={<Actualizar />} 
-            // render={() => <Actualizar parentState={this.state} />}
         />
         <Route path="admin" element={<Usuarios />} />
     </Routes>
   )
 }
 
-/** 
- render={(props) => (
-              <Categories recipes={recipes} />
-          )}
-*/
 
 export default App;

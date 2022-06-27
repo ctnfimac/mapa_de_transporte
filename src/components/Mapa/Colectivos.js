@@ -1,6 +1,6 @@
-import { Rectangle } from 'react-leaflet';
+import { Rectangle, Popup } from 'react-leaflet';
 import { useEffect, useState } from 'react';
-import { url_api_transporte } from './../../consts/backend'
+import { url_api_transporte, rectangleOptions } from './../../consts/backend'
 
 
 function Colectivos() {
@@ -31,8 +31,14 @@ function Colectivos() {
             <Rectangle
                 key={colectivo.id}
                 bounds={[[colectivo.latitude, colectivo.longitude], [colectivo.latitude + 0.0012, colectivo.longitude - 0.0022]]}
-                pathOptions={{ color: '#000', weight: 1, fill: true, fillColor: '#f1c40f', fillOpacity: .8 }}
+                pathOptions={rectangleOptions}
             >
+                {/* <Popup>
+                    <b>{colectivo.route_short_name}</b> <br />
+                    id: {colectivo.id}<br />
+                    agencia: {colectivo.agency_name}<br />
+                    hacia: {colectivo.trip_headsign}
+                </Popup> */}
             </Rectangle>
         )
         }
