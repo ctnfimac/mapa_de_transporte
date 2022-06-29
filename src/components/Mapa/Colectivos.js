@@ -1,4 +1,4 @@
-import { Rectangle, Popup } from 'react-leaflet';
+import { Rectangle } from 'react-leaflet';
 import { useEffect, useState } from 'react';
 import { url_api_transporte, rectangleOptions } from './../../consts/backend'
 

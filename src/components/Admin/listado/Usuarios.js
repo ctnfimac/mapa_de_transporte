@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from  'react-router-dom';
 import './Usuarios.css';
 
-const Usuarios = () => {
+const Usuarios = ({cerrarSesion}) => {
     const [usuarios, setUsuarios] = useState([])
     const [datosActualizados, setDatosActualizados] = useState(false)
 
@@ -27,6 +27,7 @@ const Usuarios = () => {
         <div className="usuarios__container">
             <h2>Lista de Usuarios</h2>
             <Link to="/admin/alta" className="btn-add">Nuevo</Link>
+            <button onClick={() => cerrarSesion()}>Cerrar Sesión</button>
             <table className="usuarios__table">
                 <thead>
                     <tr>
