@@ -54,17 +54,17 @@ function App() {
 				<Route path="/" element={<Mapa />} />
 				<Route 
 					path="admin/alta" 
-					element={<ProtectedRoute user={user}> <Alta /> </ProtectedRoute>}
+					element={<ProtectedRoute user={user}> <Alta cerrarSesion={cerrarSesion} user={user} /> </ProtectedRoute>}
 				/>
 				<Route
 					path="admin/actualizar"
-					element={<ProtectedRoute user={user}><Actualizar /> </ProtectedRoute>}
+					element={<ProtectedRoute user={user}><Actualizar cerrarSesion={cerrarSesion} user={user} /> </ProtectedRoute>}
 				/>
 				<Route
 					path="admin"
 					element={
 						<ProtectedRoute user={user}> 
-							<Usuarios cerrarSesion={cerrarSesion} />
+							<Usuarios cerrarSesion={cerrarSesion} user={user} />
 						</ProtectedRoute>
 					}
 				/>

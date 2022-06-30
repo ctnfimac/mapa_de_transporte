@@ -1,9 +1,10 @@
 import {Link} from 'react-router-dom';
+import './Login.css'
 
 const Login = ({loginDeAdministrador, user}) => {
     return(
         <>
-        <form onSubmit={e => loginDeAdministrador(e)} >
+        <form className="login_form" onSubmit={e => loginDeAdministrador(e)} >
             <p>
                 <label htmlFor="nombre">Nombre</label><br/>
                 <input type="text" name="nombre" id="nombre"/>
@@ -12,9 +13,9 @@ const Login = ({loginDeAdministrador, user}) => {
                 <label htmlFor="password">Password</label><br />
                 <input type="password" name="password" id="password"/>
             </p>
-            <button>Ingresar</button>   
+            <button className="login_button">Login</button>   
+            {user && <Link className="link_admin" to="/admin"> Ir al Admin </Link>}
         </form>
-        {user && <Link to="/admin"> Ir al Admin </Link>}
         </>
     )
 }
