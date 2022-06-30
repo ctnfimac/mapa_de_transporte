@@ -34,8 +34,9 @@ function App() {
 			if( typeof data[0] === 'undefined'){
 				console.log('usuario incorrecto')
 			}else{
-				setUser({ name: data[0].nombre})
 				window.localStorage.setItem('user',data[0].nombre)
+				// setUser({ user: data[0].nombre})
+				setUser(window.localStorage.getItem('user'))
 			}
 		})
 		.catch(function (error) {
@@ -47,7 +48,7 @@ function App() {
 		window.localStorage.removeItem('user');
 		setUser(null);
 	}
-
+	
 	return (
 		<>
 			<Routes>

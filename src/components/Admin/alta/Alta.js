@@ -52,7 +52,7 @@ const Alta = ({ cerrarSesion, user }) => {
 
     return(
         <Base user={user} cerrarSesion={cerrarSesion}>
-            <div className="form__container">
+            <div className="form__container_alta">
                 {respuesta ==='ok' && <p className="form__respuesta correcta">Usuario agregado correctamente</p>}
                 {respuesta ==='nook' && <p className="form__respuesta incorrecta">Error el el formulario</p>}
                 <h2 className="form__title">Alta de Usuarios</h2>

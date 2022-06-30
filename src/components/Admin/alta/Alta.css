@@ -1,10 +1,11 @@
-.form__container{
+.form__container_alta{
     background-color: #fff;
     margin: 0 auto;
     max-width: 400px;
     padding: 15px;
-    border-radius: 3px;
+    border-radius: 5px;
     margin-top: 100px;
+    border: 1px solid rgba(52, 152, 219,.3)
 }
 
 .form__respuesta{
@@ -14,40 +15,43 @@
     border-radius: 5px;
 }
 
-.form__container .correcta{
+.form__container_alta .correcta{
     background-color: #1abc9c;
+    margin-bottom: 10px;
 }
 
-.form__container .incorrecta{
-    background-color: #e74c3c;
+.form__container_alta .incorrecta{
+    background-color: rgba(231, 76, 60,.75);
+    margin-bottom: 10px;
 }
 
-.form__title{
-    color: steelblue;
+.form__container_alta .form__title{
+    color: #444;
+    margin-bottom: 10px;
 }
 
-.form__item{
+.form__container_alta .form__item{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-.form__item label{
-    color: #444;
+.form__container_alta .form__item label{
+    color: rgb(88, 87, 87);
 }
 
-.form__item input{
+.form__container_alta .form__item input{
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
 
-.form__alta button{
-    background-color: #2ecc71;
+.form__container_alta .form__alta button{
+    background-color: #27ae60;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 7px;
     color: #fff;
-    border: 1px solid #2ecc71;
+    border: 1px solid #27ae60;
     cursor: pointer;
-
+    margin-left: 10px;
 }

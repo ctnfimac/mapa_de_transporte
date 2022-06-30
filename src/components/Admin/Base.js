@@ -11,7 +11,7 @@ const Base = ({user,cerrarSesion,children}) => {
                     </svg></button>
                 </div>
                 <ul className="menu__enlaces">
-                    <li><h2 className="menu__usuario">Hola {user.name}!</h2></li>
+                    <li><h2 className="menu__usuario">Hola {user}!</h2></li>
                     <li><Link className="menu__link" to="/admin">Usuarios</Link></li>
                     <li><Link className="menu__link" to="/">Home</Link></li>
                     <li><button className="menu__link" onClick={()=>cerrarSesion()} >Cerrar Sesión</button></li>
