@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer } from 'react-leaflet';
-import './../../App.css';
+// import './../../App.css';
 import Usuarios from './Usuarios';
 import Colectivos from './Colectivos';
 

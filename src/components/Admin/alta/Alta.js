@@ -1,20 +1,19 @@
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
-import Base from '../Base';
-import './Alta.css';
+import Nav from '../../Generales/Nav';
 
 const Alta = ({ cerrarSesion, user }) => {
     const [nombre, setNombre ] = useState('')
     const [direccion, setDireccion ] = useState('')
     const [respuesta, setRespuesta ] = useState(null)
 
-    const onChangeNombre = event => {
-        setNombre(event.target.value);
-    };
+    // const onChangeNombre = event => {
+    //     setNombre(event.target.value);
+    // };
 
-    const onChangeDireccion = event => {
-        setDireccion(event.target.value);
-    };
+    // const onChangeDireccion = event => {
+    //     setDireccion(event.target.value);
+    // };
 
     const submitValues = (e) =>{
         e.preventDefault()
@@ -51,7 +50,7 @@ const Alta = ({ cerrarSesion, user }) => {
     }
 
     return(
-        <Base user={user} cerrarSesion={cerrarSesion}>
+        <Nav user={user} cerrarSesion={cerrarSesion}>
             <div className="form__container_alta">
                 {respuesta ==='ok' && <p className="form__respuesta correcta">Usuario agregado correctamente</p>}
                 {respuesta ==='nook' && <p className="form__respuesta incorrecta">Error el el formulario</p>}
@@ -64,7 +63,7 @@ const Alta = ({ cerrarSesion, user }) => {
                             name="nombre" 
                             id="nombre" 
                             value={nombre}
-                            onChange={onChangeNombre}
+                            onChange={e => { setNombre(e.target.value)}}
                         />
                     </div>
                     <div className="form__item">
@@ -74,7 +73,7 @@ const Alta = ({ cerrarSesion, user }) => {
                             name="direccion" 
                             id="direccion"
                             value={direccion}
-                            onChange={onChangeDireccion}
+                            onChange={e => { setDireccion(e.target.value)}}
                         />
                     </div>
                     <Link to="/admin" >Volver</Link>
@@ -82,7 +81,7 @@ const Alta = ({ cerrarSesion, user }) => {
                     
                 </form>
             </div>
-        </Base>
+        </Nav>
     )
 }
 

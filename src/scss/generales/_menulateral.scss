@@ -1,0 +1,95 @@
+/*Estilos para el menu superior y nav lateral izquierda*/
+.pagina{
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width:768px){
+        flex-direction: row;
+    }
+}
+
+.sidebar{
+    width: 100%;
+    background-color: #182444;
+    height: 50px;
+    height: auto;
+	padding: 3px;
+
+    @media screen and (min-width:768px){
+		width: 200px;
+		height: 100vh;
+		padding-left: 10px;
+    }
+    
+    &__head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        border-bottom: 1px solid #2d3d6e;
+
+        button{
+            width: 30px;
+            height: 30px;
+            background-color: steelblue;
+            cursor: pointer;
+            border: none;
+            border-radius: 2px;
+            margin-right: 10px;
+            color: #fff;
+            @media screen and (min-width:768px){
+                display: none;
+            }
+        }
+    }
+
+    &__titulo{
+	    color: #fff;
+        @media screen and (min-width:768px){
+            text-align: center;
+        }
+    }
+
+    &__links{
+        list-style: none;
+        margin: 0;
+
+        button{
+            background-color: #182444;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        li{
+            width: 100%;
+            padding: 8px 0;
+        }
+
+    }
+
+   
+    &__link{
+        display: block;
+        margin: 0 auto;
+        text-decoration: none;
+        text-align: center;
+        color: #ddd;
+        @media screen and (min-width:768px){
+            display: inline;
+        }
+    }
+
+    &__usuario{
+        color: #aaa;
+        font-size: 1em;
+        font-weight: 100;
+        text-align: center;
+        @media screen and (min-width:768px){
+            text-align: left;
+        }
+        
+    }
+
+}
+
+/*Fin*/

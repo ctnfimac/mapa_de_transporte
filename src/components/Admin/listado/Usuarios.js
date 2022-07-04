@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from  'react-router-dom';
-import Base from './../Base'
-import './Usuarios.css';
+import Nav from '../../Generales/Nav'
 
 const Usuarios = ({cerrarSesion, user}) => {
     const [usuarios, setUsuarios] = useState([])
@@ -25,7 +24,7 @@ const Usuarios = ({cerrarSesion, user}) => {
     }
 
     return (
-        <Base user={user} cerrarSesion={cerrarSesion}>
+        <Nav user={user} cerrarSesion={cerrarSesion}>
             <div className="usuarios__container">
                 <h2>Lista de Usuarios</h2>
                 <Link to="/admin/alta" className="btn-add">Agregar Nuevo</Link>
@@ -74,7 +73,7 @@ const Usuarios = ({cerrarSesion, user}) => {
                 </table>   
                 </div>
             </div>
-        </Base>
+        </Nav>
     )
 }
 

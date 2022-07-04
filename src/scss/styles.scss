@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@import './generales/normalize';
+@import './generales/reset';
+
+@import './components/Mapa/mapa';
+@import './generales/menulateral';
+@import './components/Admin/login';
+
+@import './components/Admin/usuarios';
+@import './components/Admin/usuarios_agregar';
+@import './components/Admin/usuarios_actualizar';
