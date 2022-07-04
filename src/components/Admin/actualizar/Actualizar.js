@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import {Link, useLocation} from 'react-router-dom';
-import Base from '../Base';
-import './Actualizar.css';
+import Nav from '../../Generales/Nav';
 
 const Actualizar = ({ cerrarSesion, user }) => {
     let data = useLocation();
@@ -9,18 +8,8 @@ const Actualizar = ({ cerrarSesion, user }) => {
     const [direccion, setDireccion] = useState(data.state.direccion)
     const [respuesta, setRespuesta ] = useState(null)
 
-    const onChangeNombre = event => {
-        setNombre(event.target.value);
-    };
-
-    const onChangeDireccion = event => {
-        setDireccion(event.target.value);
-    };
-
     const submitValues = (e) =>{
         e.preventDefault()
-        console.log(nombre)
-        console.log(direccion)
         if( nombre !== '' && direccion !== ''){
             const usuario = {
                 'nombre': nombre,
@@ -54,7 +43,7 @@ const Actualizar = ({ cerrarSesion, user }) => {
     }
 
     return(
-        <Base user={user} cerrarSesion={cerrarSesion}>
+        <Nav user={user} cerrarSesion={cerrarSesion}>
             <div className="form__container">
                 {respuesta ==='ok' && <p className="form__respuesta correcta">Usuario actualizado correctamente</p>}
                 {respuesta ==='nook' && <p className="form__respuesta incorrecta">Error el el formulario</p>}
@@ -67,7 +56,7 @@ const Actualizar = ({ cerrarSesion, user }) => {
                             name="nombre" 
                             id="nombre" 
                             value={nombre}
-                            onChange={onChangeNombre}
+                            onChange={e => { setNombre(e.target.value)}}
                         />
                     </div>
                     <div className="form__item">
@@ -77,15 +66,14 @@ const Actualizar = ({ cerrarSesion, user }) => {
                             name="direccion" 
                             id="direccion"
                             value={direccion}
-                            onChange={onChangeDireccion}
+                            onChange={e => { setDireccion(e.target.value) }}
                         />
                     </div>
                     <Link to="/admin" >Volver</Link>
                     <button type="submit" onClick={submitValues}>Actualizar</button>
-                    
                 </form>
             </div>
-        </Base>
+        </Nav>
     )
 }
 

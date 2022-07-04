@@ -4,8 +4,8 @@ import Alta from './components/Admin/alta/Alta';
 import Usuarios from "./components/Admin/listado/Usuarios";
 import Actualizar from "./components/Admin/actualizar/Actualizar";
 import {useState} from 'react';
-import './App.css';
-import ProtectedRoute from "./components/Admin/Login/ProtectedRoute";
+import './scss/styles.scss';
+import ProtectedRoute from "./components/Generales/ProtectedRoute";
 import Login from "./components/Admin/Login/Login";
 
 
