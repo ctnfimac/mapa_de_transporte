@@ -7,14 +7,6 @@ const Alta = ({ cerrarSesion, user }) => {
     const [direccion, setDireccion ] = useState('')
     const [respuesta, setRespuesta ] = useState(null)
 
-    // const onChangeNombre = event => {
-    //     setNombre(event.target.value);
-    // };
-
-    // const onChangeDireccion = event => {
-    //     setDireccion(event.target.value);
-    // };
-
     const submitValues = (e) =>{
         e.preventDefault()
         if( nombre !== '' && direccion !== ''){
@@ -50,7 +42,7 @@ const Alta = ({ cerrarSesion, user }) => {
     }
 
     return(
-        <Nav user={user} cerrarSesion={cerrarSesion}>
+        <Nav user={user} cerrarSesion={cerrarSesion} publico={false}>
             <div className="form__container_alta">
                 {respuesta ==='ok' && <p className="form__respuesta correcta">Usuario agregado correctamente</p>}
                 {respuesta ==='nook' && <p className="form__respuesta incorrecta">Error el el formulario</p>}

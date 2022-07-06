@@ -43,7 +43,7 @@ const Actualizar = ({ cerrarSesion, user }) => {
     }
 
     return(
-        <Nav user={user} cerrarSesion={cerrarSesion}>
+        <Nav user={user} cerrarSesion={cerrarSesion} publico={false}>
             <div className="form__container">
                 {respuesta ==='ok' && <p className="form__respuesta correcta">Usuario actualizado correctamente</p>}
                 {respuesta ==='nook' && <p className="form__respuesta incorrecta">Error el el formulario</p>}

@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import {
     ACTUALIZAR_COLECTIVOS,
     OBTENER_COLECTIVOS,
+    ELEGIR_LINEA_DE_COLECTIVO
 } from './action'
 
 
@@ -21,8 +22,13 @@ const colectivoReducer = (state = inicialColectivos, accion) => {
     }
 
     if (accion.type === ACTUALIZAR_COLECTIVOS){
-        console.log('entro a actualizar')
-        console.log(accion)
+        return {
+            ...state,
+            colectivos: accion.payload
+        }
+    }
+
+    if (accion.type === ELEGIR_LINEA_DE_COLECTIVO){
         return {
             ...state,
             colectivos: accion.payload

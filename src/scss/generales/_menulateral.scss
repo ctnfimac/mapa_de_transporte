@@ -91,6 +91,38 @@
         
     }
 
+    .sidebar__colectivos{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+        &--item{
+            // background-color: tomato;
+            width: 70px;
+            text-align: center;
+            // background-color: #aaa;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        &-linea{
+            color: #000;
+            cursor: pointer;
+            width: 33px;
+            border-radius: none;
+        }
+
+        &-color{
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+        }
+
+    }
+    
+
 }
 
 /*Fin*/

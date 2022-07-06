@@ -24,11 +24,10 @@ const Usuarios = ({cerrarSesion, user}) => {
     }
 
     return (
-        <Nav user={user} cerrarSesion={cerrarSesion}>
+        <Nav user={user} cerrarSesion={cerrarSesion} publico={false}>
             <div className="usuarios__container">
                 <h2>Lista de Usuarios</h2>
                 <Link to="/admin/alta" className="btn-add">Agregar Nuevo</Link>
-                {/* <button onClick={() => cerrarSesion()}>Cerrar Sesión</button> */}
                 <div className="table_responsive">
                 <table className="usuarios__table">
                     <thead>
