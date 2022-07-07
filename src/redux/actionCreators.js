@@ -1,9 +1,13 @@
 import { 
     OBTENER_COLECTIVOS, 
     ACTUALIZAR_COLECTIVOS,
-    ELEGIR_LINEA_DE_COLECTIVO
+    ELEGIR_LINEA_DE_COLECTIVO,
+    INICIAR_TIMER,
+    DETENER_TIMER,
+    COLECTIVO_SELECCIONADO
 } from './action';
 import { url_api_transporte  } from './../consts/backend'
+import store from './store';
 
 const obtenerColectivos = () => dispatch => {
     fetch(url_api_transporte )
@@ -48,6 +52,7 @@ const elegirLineaDeColectivo = (linea) => dispatch => {
     fetch(url_api_transporte + `&agency_id=${linea}`)
         .then(response => response.json())
         .then(data => {
+            // console.log(data)
             return dispatch({
                 type: ELEGIR_LINEA_DE_COLECTIVO,
                 payload: data.slice(0, 100)
@@ -56,9 +61,60 @@ const elegirLineaDeColectivo = (linea) => dispatch => {
 }
 
 
+const tiempo = setInterval
+// (() => {
+//     // console.log('hola')
+
+//     store.dispatch({ type: "TICK", currentTime: Date.now() })
+//     // return () => clearInterval(tiempo)
+    
+// }, 1000);
+
+const peticion2 = (linea) => async dispatch => {
+    fetch(url_api_transporte + `&agency_id=${linea}`)
+        .then(response => response.json())
+        .then(data => {
+            return dispatch({
+                type: ACTUALIZAR_COLECTIVOS,
+                payload: data
+            })
+        })
+}
+
+const iniciarTimer = (linea) =>({
+    type: INICIAR_TIMER,
+    temporizador: 'activado',
+    tiempo: tiempo(() => {
+        store.dispatch(peticion2(linea))
+        // store.dispatch({ type: "TICK", currentTime: Date.now() })
+
+    }, 30000)
+})
+
+const detenerTimer = () => {
+    // let currentState = store.getState()
+    // let a = clearInterval(currentState.someInterval)
+    return({
+        type: DETENER_TIMER,
+        temporizador: 'desactivado',
+        // currentTime: a
+    })
+}
+
+
+ const colectivoSeleccionado = (linea) => ({
+     type: COLECTIVO_SELECCIONADO,
+     payload: linea
+ })
+
+
+
 export { 
     obtenerColectivos, 
     actualizarColectivos, 
-    elegirLineaDeColectivo 
+    elegirLineaDeColectivo,
+    iniciarTimer,
+    detenerTimer,
+    colectivoSeleccionado
 }
 

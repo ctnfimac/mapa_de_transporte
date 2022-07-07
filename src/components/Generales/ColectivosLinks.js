@@ -1,12 +1,29 @@
 import {connect} from 'react-redux';
-import {elegirLineaDeColectivo} from './../../redux/actionCreators';
+import {elegirLineaDeColectivo, iniciarTimer, detenerTimer, colectivoSeleccionado} from './../../redux/actionCreators';
 import {lineas} from './../../consts/agencias'
 
 
-const ColectivosLink = ({seleccionarColectivo}) => {
+const ColectivosLink = ({seleccionarColectivo, timerInit, timerStop, colectivoSeleccionado_, colectivo_actual}) => {
 
     const llamarLinea = (linea) => {
+        /*
+        if(linea === 52){
+            seleccionarColectivo(linea)
+            timerInit(linea)
+
+        }else{
+            timerStop()
+        }*/
+        // if(colectivo_actual === linea){
+        //     console.log('elegiste el mismo')
+        // }else{
+        //     console.log('cambio la linea de colectivo')
+        // }
+        // colectivoSeleccionado_(linea)
         seleccionarColectivo(linea)
+        timerStop()
+        timerInit(linea)
+        
     }
 
     return(
@@ -27,10 +44,23 @@ const ColectivosLink = ({seleccionarColectivo}) => {
     )
 }
 
+const mapStateToProps = state => ({
+    colectivo_actual:state.colectivoReducer.colectivo_seleccionado
+})
+
 const mapDispatchToProps = dispatch => ({
     seleccionarColectivo(colectivo){
         dispatch(elegirLineaDeColectivo(colectivo))
-    }
+    },
+    timerInit(linea){
+        dispatch(iniciarTimer(linea))
+    },
+    timerStop(){
+        dispatch(detenerTimer())
+    },
+    colectivoSeleccionado_(linea){
+        dispatch(colectivoSeleccionado(linea))
+    },
 })
 
 
