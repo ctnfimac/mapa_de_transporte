@@ -3,24 +3,11 @@ import {elegirLineaDeColectivo, iniciarTimer, detenerTimer, colectivoSeleccionad
 import {lineas} from './../../consts/agencias'
 
 
-const ColectivosLink = ({seleccionarColectivo, timerInit, timerStop, colectivoSeleccionado_, colectivo_actual}) => {
+const ColectivosLink = ({elegirLineaDecolectivo_, timerInit, timerStop, colectivoSeleccionado_}) => {
 
     const llamarLinea = (linea) => {
-        /*
-        if(linea === 52){
-            seleccionarColectivo(linea)
-            timerInit(linea)
-
-        }else{
-            timerStop()
-        }*/
-        // if(colectivo_actual === linea){
-        //     console.log('elegiste el mismo')
-        // }else{
-        //     console.log('cambio la linea de colectivo')
-        // }
-        // colectivoSeleccionado_(linea)
-        seleccionarColectivo(linea)
+        colectivoSeleccionado_(linea)
+        elegirLineaDecolectivo_(linea)
         timerStop()
         timerInit(linea)
         
@@ -30,7 +17,7 @@ const ColectivosLink = ({seleccionarColectivo, timerInit, timerStop, colectivoSe
         <ul className="sidebar__colectivos">
             {lineas.map( linea => (
                 <li className="sidebar__colectivos--item">
-                    <div className="sidebar__colectivos-color"></div>
+                    <div className="sidebar__colectivos-color" style={{backgroundColor:linea.fillColor, border:'2px solid ' + linea.color}}></div>
                     <button
                     key = {linea.agency_id}
                     className="sidebar__colectivos-linea"
@@ -45,11 +32,12 @@ const ColectivosLink = ({seleccionarColectivo, timerInit, timerStop, colectivoSe
 }
 
 const mapStateToProps = state => ({
-    colectivo_actual:state.colectivoReducer.colectivo_seleccionado
+    colectivo_actual:state.colectivoReducer.colectivo_seleccionado,
+    // estilosl: state.colectivoReducer.estilos,
 })
 
 const mapDispatchToProps = dispatch => ({
-    seleccionarColectivo(colectivo){
+    elegirLineaDecolectivo_(colectivo){
         dispatch(elegirLineaDeColectivo(colectivo))
     },
     timerInit(linea){
@@ -64,4 +52,4 @@ const mapDispatchToProps = dispatch => ({
 })
 
 
-export default connect(null,mapDispatchToProps)(ColectivosLink);
+export default connect(mapStateToProps,mapDispatchToProps)(ColectivosLink);

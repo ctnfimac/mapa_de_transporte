@@ -9,18 +9,17 @@ import {
     DETENER_TIMER,
     COLECTIVO_SELECCIONADO
 } from './action'
+import { estilosPorAgenciaId } from '../consts/agencias';
 
 
 const inicialColectivos = {
     colectivos : [],
     temporizador: null,
-    colectivo_seleccionado: null
-    // tiempo:null,
-    // currentTime: null
+    colectivo_seleccionado: null,
+    estilos: { color: '#000', weight: 2, fill: true, fillColor: '#f40d0e', fillOpacity: .8 }
 }
 
 const colectivoReducer = (state = inicialColectivos, accion) => {
-    // console.log('entro al reducer')
     if (accion.type === OBTENER_COLECTIVOS) {
         return {
             ...state,
@@ -38,7 +37,7 @@ const colectivoReducer = (state = inicialColectivos, accion) => {
     if (accion.type === ELEGIR_LINEA_DE_COLECTIVO){
         return {
             ...state,
-            colectivos: accion.payload
+            colectivos: accion.payload,
             // colectivo_seleccionado: accion.colectivo_seleccionado
         }
     }
@@ -71,13 +70,13 @@ const colectivoReducer = (state = inicialColectivos, accion) => {
     }
 
     if (accion.type === COLECTIVO_SELECCIONADO){
+        const estilos = estilosPorAgenciaId(accion.payload)
         return {
             ...state,
-            colectivo_seleccionado: accion.payload
+            colectivo_seleccionado: accion.payload,
+            estilos: estilos
         }
     }
-
-    
 
 
     return state;

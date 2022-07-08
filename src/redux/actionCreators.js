@@ -13,15 +13,7 @@ const obtenerColectivos = () => dispatch => {
     fetch(url_api_transporte )
     .then( response => response.json())
     .then( data => {
-        // let agency_id = []
-        // console.log(typeof data)
         let datos = data.slice(0,101)
-        // let colectivos_filtrados = []
-        // agency_id = datos.map( item => item.agency_id)
-        // const agency_id_filtrado = new Set(agency_id)
-        // console.log('agency_id_filtrado')
-        // console.log(agency_id_filtrado)
-        
         return dispatch({
             type: OBTENER_COLECTIVOS,
             payload: datos
@@ -52,7 +44,6 @@ const elegirLineaDeColectivo = (linea) => dispatch => {
     fetch(url_api_transporte + `&agency_id=${linea}`)
         .then(response => response.json())
         .then(data => {
-            // console.log(data)
             return dispatch({
                 type: ELEGIR_LINEA_DE_COLECTIVO,
                 payload: data.slice(0, 100)
@@ -62,13 +53,6 @@ const elegirLineaDeColectivo = (linea) => dispatch => {
 
 
 const tiempo = setInterval
-// (() => {
-//     // console.log('hola')
-
-//     store.dispatch({ type: "TICK", currentTime: Date.now() })
-//     // return () => clearInterval(tiempo)
-    
-// }, 1000);
 
 const peticion2 = (linea) => async dispatch => {
     fetch(url_api_transporte + `&agency_id=${linea}`)
@@ -92,20 +76,18 @@ const iniciarTimer = (linea) =>({
 })
 
 const detenerTimer = () => {
-    // let currentState = store.getState()
-    // let a = clearInterval(currentState.someInterval)
     return({
         type: DETENER_TIMER,
         temporizador: 'desactivado',
-        // currentTime: a
     })
 }
 
 
- const colectivoSeleccionado = (linea) => ({
-     type: COLECTIVO_SELECCIONADO,
-     payload: linea
- })
+ const colectivoSeleccionado = (linea) =>({
+    type: COLECTIVO_SELECCIONADO,
+    payload: linea
+})
+
 
 
 
