@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from  'react-router-dom';
-import Nav from '../../Generales/Nav'
+import Nav from '../../Generales/Nav';
+
 
 const Usuarios = ({cerrarSesion, user}) => {
     const [usuarios, setUsuarios] = useState([])
@@ -70,7 +71,7 @@ const Usuarios = ({cerrarSesion, user}) => {
                         }
                     </tbody>
                 </table>   
-                </div>
+                </div>    
             </div>
         </Nav>
     )

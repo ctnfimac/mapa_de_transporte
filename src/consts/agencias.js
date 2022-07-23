@@ -16,7 +16,7 @@ const lineas = [
         "colectivo": 8,
         "agency_id": 5,
         "fillColor": "rgba(52, 152, 219,1.0)",
-        "color": "#fff"
+        "color": "rgba(52, 152, 219,1.0)"
     },
     {
         "colectivo": 168,
@@ -34,6 +34,36 @@ const lineas = [
         "colectivo": 174,
         "agency_id": 74,
         "fillColor": "rgba(52, 152, 219,1.0)",
+        "color": "#000"
+    },
+    {
+        "colectivo": 39,
+        "agency_id": 56,
+        "fillColor": "#958C65",
+        "color": "#958C65"
+    },
+    {
+        "colectivo": 59,
+        "agency_id": 84,
+        "fillColor": "#4B664A",
+        "color": "#C1653B"
+    },
+    {
+        "colectivo": 21,
+        "agency_id": 16,
+        "fillColor": "#3B84C1",
+        "color": "#3B84C1"
+    },
+    {
+        "colectivo": 4,
+        "agency_id": 93,
+        "fillColor": "#000",
+        "color": "#ff3838"
+    },
+    {
+        "colectivo": 46,
+        "agency_id": 73,
+        "fillColor": "#32628A",
         "color": "#000"
     },
 ]

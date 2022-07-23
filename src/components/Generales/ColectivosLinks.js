@@ -1,16 +1,15 @@
 import {connect} from 'react-redux';
-import {elegirLineaDeColectivo, iniciarTimer, detenerTimer, colectivoSeleccionado} from './../../redux/actionCreators';
+import {elegirLineaDeColectivo, iniciarTimer, detenerTimer, colectivoSeleccionado} from '../../redux/reducers/colectivo/actionCreators';
 import {lineas} from './../../consts/agencias'
 
 
 const ColectivosLink = ({elegirLineaDecolectivo_, timerInit, timerStop, colectivoSeleccionado_}) => {
 
     const llamarLinea = (linea) => {
-        colectivoSeleccionado_(linea)
         elegirLineaDecolectivo_(linea)
         timerStop()
         timerInit(linea)
-        
+        colectivoSeleccionado_(linea)
     }
 
     return(
@@ -33,7 +32,6 @@ const ColectivosLink = ({elegirLineaDecolectivo_, timerInit, timerStop, colectiv
 
 const mapStateToProps = state => ({
     colectivo_actual:state.colectivoReducer.colectivo_seleccionado,
-    // estilosl: state.colectivoReducer.estilos,
 })
 
 const mapDispatchToProps = dispatch => ({

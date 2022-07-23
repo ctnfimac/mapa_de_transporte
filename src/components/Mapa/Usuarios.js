@@ -19,6 +19,8 @@ function Usuarios(){
                 <Popup>
                     <b>{usuario.nombre}</b> <br />
                     direccion: {usuario.direccion}<br />
+                    barrio: {usuario.barrio}<br />
+                    comuna: {usuario.comuna}<br />
                     latitud: {usuario.latitud}<br />
                     longitud: {usuario.longitud}
                 </Popup>

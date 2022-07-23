@@ -7,6 +7,7 @@ import { useState } from 'react';
 import './../scss/styles.scss';
 import ProtectedRoute from "./Generales/ProtectedRoute";
 import Login from "./Admin/Login/Login";
+import Estadisticas from "./Admin/estadisticas/Estadisticas";
 
 const AppRoutes = () => {
     const [user, setUser] = useState(window.localStorage.getItem('user'));
@@ -58,6 +59,10 @@ const AppRoutes = () => {
                 <Route
                     path="admin/actualizar"
                     element={<ProtectedRoute user={user}><Actualizar cerrarSesion={cerrarSesion} user={user} /> </ProtectedRoute>}
+                />
+                <Route
+                    path="estadisticas"
+                    element={<ProtectedRoute user={user}><Estadisticas cerrarSesion={cerrarSesion} user={user} /> </ProtectedRoute>}
                 />
                 <Route
                     path="admin"
