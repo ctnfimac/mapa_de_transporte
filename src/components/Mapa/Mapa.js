@@ -2,9 +2,12 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import Nav from './../Generales/Nav'
 import Usuarios from './Usuarios';
 import Colectivos from './Colectivos';
+import EstadisticasUser from './EstadisticasUser';
+import {connect} from 'react-redux';
 
 
-const Mapa = () => (
+const Mapa = ({mostrarPanelDerecho}) => (
+  <>
   <Nav user={null} cerrarSesion={null} publico={true}>
     <MapContainer center={[-34.62, -58.44]} zoom={13} maxZoom={14} minZoom={12} scrollWheelZoom={true}>
         {/* <TileLayer
@@ -17,9 +20,19 @@ const Mapa = () => (
         />
         <Usuarios />
         <Colectivos />
+       
       </MapContainer>
   </Nav>
+  {<EstadisticasUser mostrarPanelDerecho={mostrarPanelDerecho}/>
+  }
+   </>
 )
 
-export default Mapa;
+const mapStateToProps = state => ({
+  mostrarPanelDerecho: state.usuarioReducer.mostrarPanelDerecho
+})
+
+
+
+export default connect(mapStateToProps,{})(Mapa);
 

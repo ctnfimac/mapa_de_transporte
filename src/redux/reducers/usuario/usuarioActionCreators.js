@@ -1,6 +1,7 @@
 import {
     USUARIO_POR_BARRIO,
-    USUARIO_POR_COMUNA
+    USUARIO_POR_COMUNA,
+    PANEL_DERECHO_MOSTRAR
 } from './UsuarioAction';
 
 
@@ -40,8 +41,14 @@ const usuarioPorComuna = ()  => dispatch => {
 }
 
 
+const panelDerechoEstado = () => ({
+    type: PANEL_DERECHO_MOSTRAR,
+    payload: true
+})
+
 export {
     usuarioPorBarrio,
-    usuarioPorComuna
+    usuarioPorComuna,
+    panelDerechoEstado
 }
 

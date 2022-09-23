@@ -1,9 +1,10 @@
 import {connect} from 'react-redux';
 import {elegirLineaDeColectivo, iniciarTimer, detenerTimer, colectivoSeleccionado} from '../../redux/reducers/colectivo/actionCreators';
 import {lineas} from './../../consts/agencias'
+import { panelDerechoEstado } from './../../redux/reducers/usuario/usuarioActionCreators'
 
 
-const ColectivosLink = ({elegirLineaDecolectivo_, timerInit, timerStop, colectivoSeleccionado_}) => {
+const ColectivosLink = ({ elegirLineaDecolectivo_, timerInit, timerStop, colectivoSeleccionado_, mostrarPanelDerecho, mostrarPanelDerechoEstado}) => {
 
     const llamarLinea = (linea) => {
         elegirLineaDecolectivo_(linea)
@@ -13,6 +14,7 @@ const ColectivosLink = ({elegirLineaDecolectivo_, timerInit, timerStop, colectiv
     }
 
     return(
+        <>
         <ul className="sidebar__colectivos">
             {lineas.map( linea => (
                 <li className="sidebar__colectivos--item">
@@ -26,12 +28,21 @@ const ColectivosLink = ({elegirLineaDecolectivo_, timerInit, timerStop, colectiv
                     </button>
                 </li>
             ))}
+           
         </ul>
+         <button
+                className="sidebar__button-estadisticas"
+                onClick={() => mostrarPanelDerecho()}
+            >
+                {!mostrarPanelDerechoEstado? "Ver Estadisticas" : "Ocultar Estadisticas"}
+        </button>
+        </>
     )
 }
 
 const mapStateToProps = state => ({
     colectivo_actual:state.colectivoReducer.colectivo_seleccionado,
+    mostrarPanelDerechoEstado: state.usuarioReducer.mostrarPanelDerecho
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -47,6 +58,9 @@ const mapDispatchToProps = dispatch => ({
     colectivoSeleccionado_(linea){
         dispatch(colectivoSeleccionado(linea))
     },
+    mostrarPanelDerecho() {
+        dispatch(panelDerechoEstado())
+    }
 })
 
 

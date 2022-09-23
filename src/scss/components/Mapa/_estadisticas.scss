@@ -1,0 +1,39 @@
+.usuario_estadisticas{
+    background-color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 750px;
+    &__item{
+        padding-top: 30px;
+        background-color: white;
+    }
+}
+
+.panelDerechoMostrar{
+    animation: mostrar-panel 1.5s;
+    right: 0px;
+}
+
+.panelDerechoOcultar{
+    animation: ocultar-panel 1s;
+    right: -800px;
+}
+
+
+@keyframes ocultar-panel {
+    from {right: 0%}
+    to {right: -800px}
+}
+
+@keyframes mostrar-panel{
+    from {right: -800px}
+    to {right: 0px}
+}
+
+body{
+    position: relative;
+    overflow-y: scroll;
+}

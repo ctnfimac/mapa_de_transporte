@@ -98,10 +98,8 @@
         align-items: center;
         list-style: none;
         &--item{
-            // background-color: tomato;
             width: 70px;
             text-align: center;
-            // background-color: #aaa;
             display: flex;
             justify-content: space-between;
             margin-bottom: 10px;
@@ -122,7 +120,21 @@
 
     }
     
+    
+}
 
+.sidebar__button-estadisticas{
+    // position: bottom;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #ccc;
+    text-decoration: underline;
+    margin-left: 30px;
 }
 
 /*Fin*/
