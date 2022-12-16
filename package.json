@@ -27,7 +27,7 @@
     "start": "npm-run-all -p start-js",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -49,8 +49,23 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "@cfaester/enzyme-adapter-react-18": "^0.6.0",
+    "babel-jest": "^29.3.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "enzyme": "^3.11.0",
+    "jest": "^27.5.1",
     "node-sass": "^7.0.1",
     "node-sass-chokidar": "^2.0.0",
     "npm-run-all": "^4.1.5"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/__test__/setupTest.js"
+    ],
+    "testEnvironment": "jsdom"
   }
 }
