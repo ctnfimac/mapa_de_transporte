@@ -5,17 +5,19 @@ import {mount, shallow} from 'enzyme'
 import Login from './../../../../components/Admin/Login/Login'
 
 describe('<Login />', () => {
+
+    let login, myMockFn;
+
+    beforeAll(() => {
+        myMockFn = jest.fn();
+        login = shallow(<Login loginDeAdministrador={myMockFn} user={'Christian'} />)
+    })
     
     test('El componente login se renderiza', () => {
-        const myMockFn = jest.fn();
-        const login = shallow(<Login loginDeAdministrador={myMockFn} user={'Christian'} />)
         expect(login.find('form').length).toEqual(1)
     })
 
-    test('El componente login tiene los input de nombre y password', () => {
-        const myMockFn = jest.fn();
-        const login = shallow(<Login loginDeAdministrador={myMockFn} user={'Christian'} />)
-        
+    test('El componente login tiene los input con id de nombre y password', () => {
         const nombreId = login.find('#nombre')
         const passwordId = login.find('#password')
         
@@ -24,21 +26,22 @@ describe('<Login />', () => {
         expect(passwordId.length).toEqual(1)
     })
 
-    test('El input de la contraseña es de tipo password', ()=>{
-        // TODO
+    test('Existe el input del nombre de tipo texto y el del password de tipo password', ()=>{
+        expect(login.contains(<input type="password" name="password" id="password" />)).toBeTruthy()
+        expect(login.contains(<input type="text" name="nombre" id="nombre" />)).toBeTruthy()
     })
 
-    test('El input del nombre es de tipo texto', () => {
-        // TODO
-    })
-
+   
     test('El componente login tiene correctamente el boton de Enviar', () => {
-        const myMockFn = jest.fn()
-        const login = shallow(<Login loginDeAdministrador={myMockFn} user={'Christian'} />)
-
         expect(login.find('button').length).toEqual(1)
         expect(login.find('.login_button').length).toEqual(1)
         expect(login.find('.login_button').text()).toEqual('Login')
+    })
+
+
+    test('El onSubmit se llama correctamente', () => {
+        login.find('form').simulate('submit', { preventDefault: () => { } });
+        expect(myMockFn).toHaveBeenCalled()
     })
 
 })
