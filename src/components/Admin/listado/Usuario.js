@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 
 const Usuario = ({item, borrar}) => (
-    <tr>
+    <tr className='usuario_info' key={item.id}>
         <td>{item.id}</td>
         <td>{item.nombre}</td>
         <td>{item.direccion}</td>
@@ -26,7 +26,7 @@ const Usuario = ({item, borrar}) => (
                 </svg>
                  modificar
             </Link>
-        </td>
+        </td> 
     </tr>
 )
 
