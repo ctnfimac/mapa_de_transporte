@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Mapa de transporte :bus:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto parte con las ganas de mostrar en un mapa algo en tiempo real, así que utilizando una api del Gobierno de la Ciudad de Buenos Aires, la libreria Leaflet y mucho esfuerzo :grin: pude hacer que se visualicen las distintas lineas de colectivos (por ahora 11) en un mapa del gcba.
+El tiempo en que se refrescan las posiciones de los colectivos es de 30 segundos.
 
-## Available Scripts
+![screencapture-christianperalta-ar-transporte-2023-03-21-01_28_29](https://user-images.githubusercontent.com/24881247/226516081-a9d83356-906b-4e62-9e96-af90fe380980.jpg)
 
-In the project directory, you can run:
 
-### `npm start`
+#### Recursos
+~~~
+Mapa base utilizado:
+https://github.com/datosgcba/tiles-gcba
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+web con la documentacion de la api utilizada(colectivos/vehiclePositionsSimple):
+https://datosabiertos-apis.buenosaires.gob.ar/BA_Root/Documentacion?schema_name=Transporte_3
+~~~
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Instalar el proyecto
 
-### `npm test`
+~~~
+1. git clone https://github.com/ctnfimac/react_api_personas.git
+2. cd react_api_personas
+3. npm install
+4. npm start
+~~~
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Correr unidades de test
+~~~
+npm test
+~~~
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Compilar el proyecto para producción
+~~~
+npm run build:production
+~~~
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Tener en cuenta lo siguiente
+- en el archivo package.json hay que modificar el valor de "homepage" por el dominio que mostrará el proyecto, ejemplo:
+~~~
+"homepage": "http://christianperalta.com.ar/transporte"
+~~~
+En este caso el dominio es http://christianperalta.com.ar y yo estoy alojando el proyecto dentro de la carpeta llamada transporte creada en el servidor.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Dado a que el proyecto se encuentra en una carpeta tengo que agregar el parámetro basename en el componente BrowserRouter 
+~~~
+root.render(
+  <React.StrictMode>
+    <BrowserRouter basename='/transporte'>
+        <App />
+      </BrowserRouter>
+  </React.StrictMode>
+);
+~~~
 
-### `npm run eject`
+### Código del Backend (opcional, no es necesario para los colectivos)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+https://github.com/ctnfimac/node_api_de_personas
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
