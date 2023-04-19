@@ -45,7 +45,7 @@ const Usuarios = ({cerrarSesion, user}) => {
                     </thead>
                     <tbody>
                        {usuarios.map( item => 
-                            <Usuario item={item} borrar={borrar} />
+                            <Usuario item={item} borrar={borrar} key={item.id}/>
                         )
                         } 
                     </tbody>

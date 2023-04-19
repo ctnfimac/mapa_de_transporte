@@ -3,6 +3,7 @@ export const url_api_transporte = `https://datosabiertos-transporte-apis.buenosa
 
 export const endpoint_barrio_por_comuna = '&method=usuarios_por_comuna'
 export const endpoint_barrio_por_barrio = '&method=usuarios_por_barrio'
+export const endpoint_login_de_usuario = '&method=login_de_usuario'
 
 export const fetcher = (...args) => fetch(...args).then(response => response.json());
 

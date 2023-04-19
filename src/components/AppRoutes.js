@@ -8,6 +8,7 @@ import './../scss/styles.scss';
 import ProtectedRoute from "./Generales/ProtectedRoute";
 import Login from "./Admin/Login/Login";
 import Estadisticas from "./Admin/estadisticas/Estadisticas";
+import { endpoint_login_de_usuario } from './../../src/consts/backend';
 
 const AppRoutes = () => {
     const [user, setUser] = useState(window.localStorage.getItem('user'));
@@ -18,9 +19,9 @@ const AppRoutes = () => {
             nombre: e.target.nombre.value,
             password: e.target.password.value
         }
-
+        let url = process.env.REACT_APP_BACKEND_URL + endpoint_login_de_usuario
         // le pego a la api y busco si el usuario existe
-        fetch(`${process.env.REACT_APP_BACKEND_URL}/login`, {
+        fetch(url, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
