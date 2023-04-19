@@ -4,9 +4,14 @@ import {
     PANEL_DERECHO_MOSTRAR
 } from './UsuarioAction';
 
+import { 
+    endpoint_barrio_por_barrio, 
+    endpoint_barrio_por_comuna
+} from './../../../../src/consts/backend'
 
 const usuarioPorBarrio = ()  => dispatch => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/usuariosPorBarrio`)
+    let url_endpoint = process.env.REACT_APP_BACKEND_URL + endpoint_barrio_por_barrio
+    fetch(url_endpoint)
         .then(response => response.json())
         .then(data => {
             let barrios = data.map(item => item.barrio)
@@ -24,7 +29,8 @@ const usuarioPorBarrio = ()  => dispatch => {
 
 
 const usuarioPorComuna = ()  => dispatch => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/usuariosPorComuna`)
+    let url_endpoint = process.env.REACT_APP_BACKEND_URL + endpoint_barrio_por_comuna
+    fetch(url_endpoint)
         .then(response => response.json())
         .then(data => {
             let comunas = data.map(item => item.comuna)

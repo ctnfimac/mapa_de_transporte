@@ -17,7 +17,7 @@ const ColectivosLink = ({ elegirLineaDecolectivo_, timerInit, timerStop, colecti
         <>
         <ul className="sidebar__colectivos">
             {lineas.map( linea => (
-                <li className="sidebar__colectivos--item">
+                <li className="sidebar__colectivos--item" key={linea.agency_id}>
                     <div className="sidebar__colectivos-color" style={{backgroundColor:linea.fillColor, border:'2px solid ' + linea.color}}></div>
                     <button
                     key = {linea.agency_id}

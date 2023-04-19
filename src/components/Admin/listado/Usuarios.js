@@ -8,7 +8,7 @@ const Usuarios = ({cerrarSesion, user}) => {
     const [datosActualizados, setDatosActualizados] = useState(false)
 
     useEffect(()=>{
-        fetch(`${process.env.REACT_APP_BACKEND_URL}/usuarios`)
+        fetch(`${process.env.REACT_APP_BACKEND_URL}`)
             .then(response => response.json())
             .then(data => setUsuarios(data))
     },[datosActualizados])
