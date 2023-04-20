@@ -16,7 +16,7 @@ const Usuarios = ({cerrarSesion, user}) => {
     const borrar = (id) =>{
         let confirmacion = window.confirm(`Realmente quiere borrar el registro de id: ${id} ?`)
         if(confirmacion){
-            fetch(`${process.env.REACT_APP_BACKEND_URL}/usuario/${id}`, { 
+            fetch(`${process.env.REACT_APP_BACKEND_URL}&id=${id}`, { 
                 method:'DELETE'
             })
             .then(response => response.text())

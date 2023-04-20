@@ -14,7 +14,7 @@ const Alta = ({ cerrarSesion, user }) => {
                 'nombre': nombre,
                 'direccion': direccion
             }
-            fetch(`${process.env.REACT_APP_BACKEND_URL}/usuario`, {
+            fetch(`${process.env.REACT_APP_BACKEND_URL}`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

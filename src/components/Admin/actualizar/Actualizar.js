@@ -15,7 +15,7 @@ const Actualizar = ({ cerrarSesion, user }) => {
                 'nombre': nombre,
                 'direccion': direccion
             }
-            fetch(`${process.env.REACT_APP_BACKEND_URL}/usuario/${data.state.id}`, {
+            fetch(`${process.env.REACT_APP_BACKEND_URL}&id=${data.state.id}`, {
                 method: 'PUT',
                 headers: {
                     'Accept': 'application/json',
