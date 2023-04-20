@@ -1,4 +1,5 @@
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {elegirLineaDeColectivo, iniciarTimer, detenerTimer, colectivoSeleccionado} from '../../redux/reducers/colectivo/actionCreators';
 import {lineas} from './../../consts/agencias'
 import { panelDerechoEstado } from './../../redux/reducers/usuario/usuarioActionCreators'
@@ -30,12 +31,15 @@ const ColectivosLink = ({ elegirLineaDecolectivo_, timerInit, timerStop, colecti
             ))}
            
         </ul>
-         <button
-                className="sidebar__button-estadisticas"
-                onClick={() => mostrarPanelDerecho()}
-            >
-                {!mostrarPanelDerechoEstado? "Ver Estadisticas" : "Ocultar Estadisticas"}
-        </button>
+        <div className="sidebar_links" >  
+            <Link className="sidebar__button-login" to="/login" >Admin</Link>
+            <button
+                    className="sidebar__button-estadisticas"
+                    onClick={() => mostrarPanelDerecho()}
+                >
+                    {!mostrarPanelDerechoEstado? "Ver Estadisticas" : "Cerrar Estadisticas"}
+            </button>
+        </div>
         </>
     )
 }
