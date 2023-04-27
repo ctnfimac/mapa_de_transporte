@@ -12,6 +12,7 @@ import { endpoint_login_de_usuario } from './../../src/consts/backend';
 
 const AppRoutes = () => {
     const [user, setUser] = useState(window.localStorage.getItem('user'));
+    const [msgLogin, setMsgLogin] = useState();
 
     const loginDeAdministrador = (e) => {
         e.preventDefault();
@@ -33,19 +34,21 @@ const AppRoutes = () => {
             .then(data => {
                 if (typeof data[0] === 'undefined') {
                     console.log('usuario incorrecto')
+                    setMsgLogin('¡Credenciales Incorrectas!')
                 } else {
                     window.localStorage.setItem('user', data[0].nombre)
-                    // setUser({ user: data[0].nombre})
                     setUser(window.localStorage.getItem('user'))
                 }
             })
             .catch(function (error) {
-                console.log('error: ' + error)
+                // console.log('error: ' + error)
+                setMsgLogin('¡Credenciales Incorrectas!')
             });
     }
 
     const cerrarSesion = () => {
         window.localStorage.removeItem('user');
+        setMsgLogin(null)
         setUser(null);
     }
 
@@ -78,6 +81,8 @@ const AppRoutes = () => {
                     element={<Login
                         loginDeAdministrador={loginDeAdministrador}
                         user={user}
+                        cerrarSesion={cerrarSesion}
+                        msgLogin={msgLogin}
                     />}
                 />
             </Routes>
