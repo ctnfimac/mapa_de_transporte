@@ -37,7 +37,7 @@ const ColectivosLink = ({ elegirLineaDecolectivo_, timerInit, timerStop, colecti
                     className="sidebar__button-estadisticas"
                     onClick={() => mostrarPanelDerecho()}
                 >
-                    {!mostrarPanelDerechoEstado? "Ver Estadisticas" : "Cerrar Estadisticas"}
+                    {!mostrarPanelDerechoEstado? "Mirar Estadisticas" : "Cerrar Estadisticas"}
             </button>
         </div>
         </>
