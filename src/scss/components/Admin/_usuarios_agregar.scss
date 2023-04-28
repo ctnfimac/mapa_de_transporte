@@ -1,11 +1,11 @@
 .form__container_alta{
-    background-color: #fff;
+    background-color: #4682b4;
     margin: 0 auto;
     max-width: 400px;
-    padding: 15px;
+    padding: 25px 20px;
     border-radius: 5px;
     margin-top: 100px;
-    border: 1px solid rgba(52, 152, 219,.3)
+    border: 2px solid #ddd;
 }
 
 .form__respuesta{
@@ -16,7 +16,7 @@
 }
 
 .form__container_alta .correcta{
-    background-color: #1abc9c;
+    background-color: #27ae60;
     margin-bottom: 10px;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .form__container_alta .form__title{
-    color: #444;
+    color: #333;
     margin-bottom: 10px;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .form__container_alta .form__item label{
-    color: rgb(88, 87, 87);
+    color: lightgray;
 }
 
 .form__container_alta .form__item input{
@@ -47,11 +47,20 @@
 }
 
 .form__container_alta .form__alta button{
-    background-color: #27ae60;
+    background-color: slateblue;
     padding: 5px 10px;
     border-radius: 7px;
     color: #fff;
-    border: 1px solid #27ae60;
+    border: 1px solid lightgray;
     cursor: pointer;
     margin-left: 10px;
+}
+
+.form__cancelar{
+    background-color: tomato;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 7px;
+    text-decoration: none;
+    border: 1px solid lightgray;
 }

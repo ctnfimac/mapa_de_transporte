@@ -40,7 +40,7 @@ const Usuarios = ({cerrarSesion, user}) => {
                             <th>Comuna</th>
                             <th>Longitud</th>
                             <th>Latitud</th>
-                            <th>Operation</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody>

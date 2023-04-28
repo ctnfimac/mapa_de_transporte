@@ -69,7 +69,7 @@ const Actualizar = ({ cerrarSesion, user }) => {
                             onChange={e => { setDireccion(e.target.value) }}
                         />
                     </div>
-                    <Link to="/admin" >Volver</Link>
+                    <Link className="form__cancelar" to="/admin" >Cancelar</Link>
                     <button type="submit" onClick={submitValues}>Actualizar</button>
                 </form>
             </div>

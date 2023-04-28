@@ -14,7 +14,7 @@ const Estadisticas = ({ user, cerrarSesion, barrios, cantidad_de_usuarios, usuar
                         labels={barrios} 
                         label='Usuarios'
                         cantidad={cantidad_de_usuarios}
-                        color='rgba(230, 126, 34,0.5)'
+                        color='rgba(230, 126, 34,.8)'
                     />
                 </div>
                 <div className="estadisticas__item">
@@ -24,7 +24,7 @@ const Estadisticas = ({ user, cerrarSesion, barrios, cantidad_de_usuarios, usuar
                         labels={comunas} 
                         label='Usuarios'
                         cantidad={usuarios_de_comunas}
-                        color='rgba(155, 89, 182,0.5)'
+                        color='rgba(155, 89, 182,.8)'
                     />
                 </div>
             </section>

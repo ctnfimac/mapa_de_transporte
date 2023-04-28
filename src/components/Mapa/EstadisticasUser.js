@@ -12,7 +12,7 @@ const EstadisticasUser = ({ barrios, cantidad_de_usuarios, comunas, usuarios_de_
                 labels={barrios}
                 label='Usuarios'
                 cantidad={cantidad_de_usuarios}
-                color='rgba(230, 126, 34,0.5)'
+                color='rgba(230, 126, 34,0.7)'
             />
         </div>
         <div className="usuario_estadisticas__item">
@@ -22,7 +22,7 @@ const EstadisticasUser = ({ barrios, cantidad_de_usuarios, comunas, usuarios_de_
                 labels={comunas}
                 label='Usuarios'
                 cantidad={usuarios_de_comunas}
-                color='rgba(155, 89, 182,0.5)'
+                color='rgba(155, 89, 182,0.7)'
             />
         </div>
     </div>

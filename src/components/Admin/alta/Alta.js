@@ -46,7 +46,7 @@ const Alta = ({ cerrarSesion, user }) => {
             <div className="form__container_alta">
                 {respuesta ==='ok' && <p className="form__respuesta correcta">Usuario agregado correctamente</p>}
                 {respuesta ==='nook' && <p className="form__respuesta incorrecta">Error el el formulario</p>}
-                <h2 className="form__title">Alta de Usuarios</h2>
+                <h2 className="form__title">Alta de Usuario</h2>
                 <form className="form__alta" method="POST">
                     <div className="form__item">
                         <label htmlFor="nombre">Nombre</label>
@@ -56,6 +56,7 @@ const Alta = ({ cerrarSesion, user }) => {
                             id="nombre" 
                             value={nombre}
                             onChange={e => { setNombre(e.target.value)}}
+                            placeholder='Ej: Cornelio Saavedra'
                         />
                     </div>
                     <div className="form__item">
@@ -66,9 +67,10 @@ const Alta = ({ cerrarSesion, user }) => {
                             id="direccion"
                             value={direccion}
                             onChange={e => { setDireccion(e.target.value)}}
+                            placeholder='Ej: Lacarra 432'
                         />
                     </div>
-                    <Link to="/admin" >Volver</Link>
+                    <Link className="form__cancelar" to="/admin" >Cancelar</Link>
                     <button type="submit" onClick={submitValues}>Agregar</button>
                     
                 </form>

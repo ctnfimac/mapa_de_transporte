@@ -1,33 +1,35 @@
 .usuarios__container{
-    background-color: #fff;
     padding: 20px;
     border-radius: 3px;
 }
+
 
 .table_responsive{
     overflow-x:auto;
 }
 .usuarios__container h2{
-    margin-bottom: 25px;
-    color:#444;
-    font-size: 1.6em;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    color:#ccc;
+    font-size: 1.8em;
 }
 
 .usuarios__table{
     width: 100%;
+    min-width: 1000px;
     text-align: left;
-    margin-top: 15px;
+    margin-top: 20px;
     color: rgb(111, 122, 146);
+    border-collapse: collapse;
 }
 
 .usuarios__table thead{
-    background-color: #ddd;
-    color: #444;
+    color: #ccc;
 }
 
 
 .usuarios__table tbody td, .usuarios__table thead th{
-    padding: 5px;
+    padding: 5px 0px;
 }
 
 .usuarios__table button, .usuarios__container .btn-add, .usuarios__table .btn-warning{
@@ -42,8 +44,18 @@
     font-size: .9em;
 }
 
+.usuarios_botones{
+    display: flex;
+    justify-content: center;
+}
+
 .usuarios__table .btn-warning, .usuarios__table .btn-danger{
     font-size: .7em;
+    display: inline-block;
+    width: 100%;
+    @media screen and (min-width:1200px){
+        width: 50%;
+   	} 
 }
 
 .usuarios__table .btn-warning{
@@ -53,5 +65,22 @@
 
 .usuarios__container .btn-add{
     background-color: #27ae60;
-    padding: 8px 20px;
+    padding: 8px 30px;
+}
+
+thead {
+	th {
+		background-color: #000;
+	}
+}
+
+
+.usuarios__table {
+	tr {
+        color: #ccc;
+		&:hover {
+			background-color: rgba(255,255,255,0.4);
+            color: #fff;
+		}
+	}
 }
